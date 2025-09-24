@@ -12,7 +12,7 @@
   githubUrl: string;
 }
 
-
+import multimartImage from '@/assets/image.png';
 
  export const projects: Project[] = [
 { id: 2, title: 'Hotel & Travel Booking App', category: 'mobile', duration: '4 months', role: 'Frontend Developer', technologies: ['Flutter', 'Dart', 'Firebase', 'Google Maps API', 'BLoC'], description: 'Built a cross-platform Android/iOS app for hotel and flight bookings. Developed an admin dashboard, integrated Google Maps, secure payments, and user reviews.', features: [ 'Cross-platform mobile application', 'Hotel and flight booking system', 'Admin dashboard for partners', 'Google Maps integration', 'Secure payment processing', 'User reviews and ratings' ], image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=400&fit=crop', liveUrl: '#', githubUrl: '#' }, { id: 3, title: 'Weather App', category: 'web', duration: '2 weeks', role: 'Frontend Developer', technologies: ['React.js', 'REST API', 'Tailwind CSS'], description: 'Developed a multi-language weather app with live data from OpenWeather API. Delivered a responsive UI supporting English and Arabic.', features: [ 'Live weather data integration', 'Multi-language support (English/Arabic)', 'Responsive design for all devices', 'Modern and intuitive UI', 'Location-based weather forecasts' ], image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop', liveUrl: 'https://profound-jelly-5292c6.netlify.app/', githubUrl: '#' },
@@ -54,7 +54,7 @@
       'State management using Redux Toolkit',
       'Live demo available online'
     ],
-    image: './public/image.png',
+    image: multimartImage,
     liveUrl: 'https://multimart-ecommerce.onrender.com',
     githubUrl: ''
   }
