@@ -1,23 +1,10 @@
 import React from "react";
 import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
+import { ExperienceItem, experiences } from "@/data/experiences";
+import { skillCategories, SkillCategory } from "@/data/skillCategories";
 
 /* ------------------ Reusable Components ------------------ */
 
-interface ExperienceItem {
-  title: string;
-  company: string;
-  period: string;
-  location: string;
-  description: string;
-  achievements: string[];
-  links?: { label: string; url: string }[];
-}
-
-interface SkillCategory {
-  title: string;
-  skills: string[];
-  gradientClass: string;
-}
 
 const ExperienceCard: React.FC<{ experience: ExperienceItem }> = ({
   experience,
@@ -120,56 +107,8 @@ const SkillsList: React.FC<{ categories: SkillCategory[] }> = ({
 /* ------------------ Main Experience Section ------------------ */
 
 const Experience: React.FC = () => {
-  const experiences: ExperienceItem[] = [
-    {
-      title: "Frontend Developer (Freelance)",
-      company: "Freelancing",
-      period: "May 2023 - Present",
-      location: "Damascus, Syria",
-      description:
-        "Worked as a freelance Frontend Developer, designing, testing, and maintaining web and mobile applications. Specialized in React.js and Flutter, with responsibilities including responsive UI development, API integration, state management, and collaboration using Agile methodologies.",
-      achievements: [
-        "Delivered multiple projects across diverse domains",
-        "Ensured code quality and user-focused solutions",
-        "Collaborated with clients using Agile methodologies",
-        "Specialized in responsive UI development and API integration",
-        "Maintained high standards for accessibility and modern UX",
-      ],
-      links: [
-        {
-          label: "LinkedIn",
-          url: "https://www.linkedin.com/in/yumna-ataba-b263802aa",
-        },
-        { label: "GitHub", url: "https://github.com/YumnaAtaba3" },
-      ],
-    },
-    // Add more experiences here if needed
-  ];
 
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Languages & Frameworks",
-      skills: ["React.js", "Flutter", "JavaScript", "TypeScript", "Dart"],
-      gradientClass: "bg-gradient-primary",
-    },
-    {
-      title: "Styling & UI",
-      skills: ["HTML5", "CSS3", "Tailwind CSS", "Material UI", "Ant Design"],
-      gradientClass: "bg-gradient-secondary",
-    },
-    {
-      title: "Tools & Methodologies",
-      skills: [
-        "Git",
-        "GitHub",
-        "RESTful APIs",
-        "State Management",
-        "Agile/Scrum",
-        "UI/UX Design",
-      ],
-      gradientClass: "bg-gradient-accent",
-    },
-  ];
+
 
   return (
     <section id="experience" className="section-spacing">

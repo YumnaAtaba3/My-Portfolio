@@ -4,17 +4,15 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 const repoName = "My-Portfolio";
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+
+ 
+
+export default defineConfig({
+  base: `/${repoName}/`, // important for GitHub Pages
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
- 
-  base: `/${repoName}/`,
-}));
+});

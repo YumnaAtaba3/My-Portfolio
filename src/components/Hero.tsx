@@ -9,6 +9,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 /* ---------------- Reusable Components ---------------- */
 interface ContactInfoItemProps {
@@ -19,10 +20,15 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({
   icon: Icon,
   value,
 }) => (
-  <div className="flex items-center gap-2">
+  <motion.div
+    className="flex items-center gap-2"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
     <Icon className="w-4 h-4" />
     <span>{value}</span>
-  </div>
+  </motion.div>
 );
 
 interface ActionButtonProps {
@@ -37,7 +43,9 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   onClick,
   variant = "primary",
 }) => (
-  <button
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
     onClick={onClick}
     className={`px-8 py-4 rounded-full flex items-center justify-center gap-2 font-medium transition-all duration-300 ${
       variant === "primary"
@@ -47,7 +55,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   >
     {label}
     <Icon className="w-5 h-5" />
-  </button>
+  </motion.button>
 );
 
 interface SocialLinkProps {
@@ -60,14 +68,15 @@ const SocialLink: React.FC<SocialLinkProps> = ({
   url,
   colorClass,
 }) => (
-  <a
+  <motion.a
     href={url}
     target="_blank"
     rel="noopener noreferrer"
+    whileHover={{ scale: 1.2, rotate: 5 }}
     className={`w-12 h-12 ${colorClass} flex items-center justify-center hover-glow transition-all duration-300`}
   >
     <Icon className="w-6 h-6 text-white" />
-  </a>
+  </motion.a>
 );
 
 /* ---------------- Main Hero Component ---------------- */
@@ -108,32 +117,65 @@ const Hero: React.FC = () => {
     >
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 circle-primary animate-float opacity-20"></div>
-        <div
-          className="absolute top-40 right-20 w-24 h-24 circle-secondary animate-float opacity-30"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div
-          className="absolute bottom-32 left-1/4 w-40 h-40 circle-accent animate-float opacity-15"
-          style={{ animationDelay: "4s" }}
-        ></div>
-        <div className="absolute top-1/3 right-1/3 w-16 h-16 circle-primary animate-rotate opacity-25"></div>
+        {[
+          "circle-primary",
+          "circle-secondary",
+          "circle-accent",
+          "circle-primary",
+        ].map((cls, i) => (
+          <motion.div
+            key={i}
+            className={`absolute w-32 h-32 ${cls} opacity-20`}
+            style={{
+              top: `${20 + i * 15}%`,
+              left: `${10 + i * 10}%`,
+            }}
+            animate={{ y: [0, -20, 0], rotate: [0, 360] }}
+            transition={{
+              repeat: Infinity,
+              duration: 10 + i * 2,
+              ease: "linear",
+            }}
+          />
+        ))}
       </div>
 
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left animate-slide-up">
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <p className="text-lg text-muted-foreground mb-2">Hello, I'm</p>
-            <h1 className="text-hero gradient-text mb-4">Yumna Ataba</h1>
-            <h2 className="text-display text-foreground mb-6">
+            <motion.h1
+              className="text-hero gradient-text mb-4"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Yumna Ataba
+            </motion.h1>
+            <motion.h2
+              className="text-display text-foreground mb-6"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               Frontend Developer
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
+            >
               Passionate Frontend Developer with 2+ years of experience creating
               beautiful, responsive web and mobile applications using React.js,
               Flutter, and modern technologies.
-            </p>
+            </motion.p>
 
             {/* Contact Info */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 text-sm text-muted-foreground">
@@ -143,7 +185,18 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              initial="hidden"
+              whileInView="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 },
+                },
+              }}
+            >
               <ActionButton
                 label="Get In Touch"
                 icon={ExternalLink}
@@ -155,12 +208,12 @@ const Hero: React.FC = () => {
                 variant="secondary"
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "./yumna_ataba_Resume (1).pdf"; 
-                  link.download = "YumnaAtaba_CV.pdf"; 
+                  link.href = "./yumna_ataba_Resume (1).pdf";
+                  link.download = "YumnaAtaba_CV.pdf";
                   link.click();
                 }}
               />
-            </div>
+            </motion.div>
 
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start">
@@ -168,26 +221,90 @@ const Hero: React.FC = () => {
                 <SocialLink key={i} {...social} />
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Avatar/Image */}
-          <div className="flex justify-center lg:justify-end animate-scale-in">
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-hero flex items-center justify-center text-6xl font-bold text-white animate-pulse-glow font-family-sans">
-                YA
-              </div>
-              <div className="absolute -top-4 -right-4 w-16 h-16 circle-accent animate-float opacity-80 flex items-center justify-center text-white font-bold ">
+              <motion.div
+                className="w-80 h-80 rounded-full bg-gradient-hero flex items-center justify-center text-6xl font-bold text-white font-family-sans"
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 6,
+                  ease: "easeInOut",
+                }}
+              >
+                {" "}
+                <motion.div
+                  className="absolute text-9xl font-bold text-white"
+                  animate={{
+                    x: [0, 40, -30, 20, 0],
+                    y: [0, -20, 30, -10, 0],
+                    rotate: [0, 10, -10, 0],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 6,
+                    ease: "easeInOut",
+                  }}
+                >
+                  Y
+                </motion.div>
+                {/* Floating A */}
+                <motion.div
+                  className="absolute text-7xl font-bold text-white"
+                  animate={{
+                    x: [10, -40, 30, -20, 10],
+                    y: [10, 30, -20, 20, 10],
+                    rotate: [0, -15, 15, 0],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 6,
+                    ease: "easeInOut",
+                  }}
+                >
+                  A
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="absolute -top-4 -right-4 w-16 h-16 circle-accent opacity-80 flex items-center justify-center text-white font-bold"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 3 }}
+              >
                 2+
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 circle-secondary animate-float opacity-80 flex items-center justify-center text-white text-sm">
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-12 h-12 circle-secondary opacity-80 flex items-center justify-center text-white text-sm"
+                animate={{ y: [5, -15, 5] }}
+                transition={{ repeat: Infinity, duration: 4 }}
+              >
                 ⚡
-              </div>
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-20 -left-4 w-12 h-12 circle-secondary opacity-80 flex items-center justify-center text-white text-sm"
+                animate={{ x: [50, -50, 50] }}
+                transition={{ repeat: Infinity, duration: 4 }}
+              >
+              <Mail/>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in">
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
           <button
             onClick={() => scrollToSection("about")}
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
@@ -195,7 +312,7 @@ const Hero: React.FC = () => {
             <span className="text-sm">Scroll Down</span>
             <ArrowDown className="w-5 h-5 animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
