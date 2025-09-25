@@ -1,164 +1,92 @@
+# Yumna Ataba Portfolio 💻
 
-```markdown
-# Yumna Ataba Portfolio
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Vite](https://img.shields.io/badge/Vite-3.0.0-yellow)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4.17-blue)](https://tailwindcss.com/)
+[![ShadCN UI](https://img.shields.io/badge/ShadCN-UI-purple)](https://shadcn.com/)
 
-A modern and interactive **Frontend Developer portfolio** built with **Vite**, **React**, **TypeScript**, **Tailwind CSS**, and **ShadCN UI components**. This portfolio showcases projects, skills, and contact information with smooth animations and glassmorphism design.
-
----
-
-## Table of Contents
-
-- [Demo](#demo)  
-- [Features](#features)  
-- [Technologies](#technologies)  
-- [Project Structure](#project-structure)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Deployment](#deployment)  
-- [Contact](#contact)  
+A **modern, interactive, and responsive Frontend Developer portfolio** built using **Vite, React, TypeScript, Tailwind CSS**, and **ShadCN UI components**. This portfolio showcases projects, skills, and contact information with smooth animations and elegant glassmorphism design.
 
 ---
 
-## Demo
+## 🌐 Live Demo
 
-> Live demo: [My Portfolio](https://YumnaAtaba3.github.io/My-Portfolio)
-
----
-
-## Features
-
-- **About Section** – Interactive introduction, education, and languages.  
-- **Projects Section** – Filterable web and mobile projects with live and GitHub links.  
-- **Skills Section** – Categorized skills with icons and additional technology tags.  
-- **Contact Section** – Contact form via email, social links, and availability status.  
-- **Footer** – Quick links, social buttons, and smooth scroll-to-top.  
-- **Animations** – Fade-ins, hover effects, scale animations, and glassmorphism.  
-- **Responsive Design** – Fully mobile-friendly.
+[View the live portfolio here](https://YumnaAtaba3.github.io/My-Portfolio)
 
 ---
 
-## Technologies
+## ✨ Features
+
+- **About Section** – Professional introduction, education, and languages.  
+- **Projects Section** – Filterable web and mobile projects with live demos and GitHub links.  
+- **Skills Section** – Categorized skills with icons, plus additional technology tags.  
+- **Contact Section** – Interactive form with email integration, social links, and availability status.  
+- **Footer** – Quick links, social buttons, and smooth scroll-to-top functionality.  
+- **Animations** – Framer Motion powered transitions, hover effects, and floating elements.  
+- **Responsive Design** – Fully optimized for desktop, tablet, and mobile.  
+
+---
+
+## 🛠 Technologies
 
 - **React.js** – Component-based frontend framework  
 - **TypeScript** – Type-safe JavaScript  
-- **Vite** – Fast frontend tooling and dev server  
+- **Vite** – Fast build and development tooling  
 - **Tailwind CSS** – Utility-first CSS framework  
-- **ShadCN UI** – Custom components with Radix UI  
-- **Framer Motion** – Smooth animations  
+- **ShadCN UI** – Radix-based UI components  
+- **Framer Motion** – Smooth and interactive animations  
 - **Lucide Icons** – Clean, customizable icons  
-- **React Parallax Tilt** – Interactive tilt effects  
-- **Mailto Integration** – Contact form opens default email client  
+- **React Parallax Tilt** – Interactive tilt effects for projects  
+- **Mailto Integration** – Contact form opens default email client
+  ---
 
----
-
-## Project Structure
-
-```
-
-src/
+## 📂 Project Structure
+- src/
 ├─ components/
-│  ├─ About.tsx
-│  ├─ Projects.tsx
-│  ├─ Skills.tsx
-│  ├─ Contact.tsx
-│  └─ Footer.tsx
+│ ├─ About.tsx
+│ ├─ Projects.tsx
+│ ├─ Skills.tsx
+│ ├─ Contact.tsx
+│ └─ Footer.tsx
 ├─ data/
-│  ├─ projects.ts
-│  └─ stats.ts
+│ ├─ projects.ts
+│ └─ stats.ts
 ├─ App.tsx
 ├─ main.tsx
 └─ index.css
 
-````
+---
 
 ---
 
-## Installation
+## 🚀 Installation
 
-1. Clone the repository:  
+1. Clone the repository:
+
 ```bash
 git clone https://github.com/YumnaAtaba3/My-Portfolio.git
 cd My-Portfolio
-````
 
-2. Install dependencies:
-
-```bash
 npm install
 # or
 yarn install
-```
-
 ---
+📬 Contact
 
-## Usage
+Email: yumnaataba33@gmail.com
 
-1. Start the development server:
+Phone: +963 962 881 645
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+LinkedIn: linkedin.com/in/yumna-ataba-b263802aa
 
-2. Open your browser at [http://localhost:5173](http://localhost:5173)
+GitHub: github.com/YumnaAtaba3
 
-3. Build for production:
+📝 License
 
-```bash
-npm run build
-# or
-yarn build
-```
+This project is open-source and available under the MIT License.
 
-4. Preview production build:
+Made with ❤️ and lots of ☕ coffee by Yumna Ataba
+## 📂 Project Structure
 
-```bash
-npm run preview
-# or
-yarn preview
-```
-
----
-
-## Deployment
-
-* This project is deployed via **GitHub Pages**:
-
-```bash
-npm run deploy
-# or
-yarn deploy
-```
-
-* Make sure the `homepage` field in `package.json` is set correctly:
-
-```json
-"homepage": "https://YumnaAtaba3.github.io/My-Portfolio"
-```
-
----
-
-## Contact
-
-* Email: [yumnaataba33@gmail.com](mailto:yumnaataba33@gmail.com)
-* Phone: `+963 962 881 645`
-* LinkedIn: [linkedin.com/in/yumna-ataba-b263802aa](https://www.linkedin.com/in/yumna-ataba-b263802aa)
-* GitHub: [github.com/YumnaAtaba3](https://github.com/YumnaAtaba3)
-
----
-
-## License
-
-This project is **open-source** and available under the MIT License.
-
----
-
-> Made with ❤️ and lots of coffee ☕ by **Yumna Ataba**
-
-```
-
-
-
-Do you want me to add those badges?
-```
