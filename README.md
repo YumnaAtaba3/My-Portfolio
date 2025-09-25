@@ -43,7 +43,7 @@ A **modern, interactive, and responsive Frontend Developer portfolio** built usi
   ---
 
 ## 📂 Project Structure
-- src/
+## src/
 ├─ components/
 │ ├─ About.tsx
 │ ├─ Projects.tsx
@@ -58,9 +58,22 @@ A **modern, interactive, and responsive Frontend Developer portfolio** built usi
 └─ index.css
 
 ---
+## 📬 Contact
 
+Email: yumnaataba33@gmail.com
+
+Phone: +963 962 881 645
+
+LinkedIn: linkedin.com/in/yumna-ataba-b263802aa
+
+GitHub: github.com/YumnaAtaba3
+
+## 📝 License
+
+This project is open-source and available under the MIT License.
+
+Made with ❤️ and lots of ☕ coffee by Yumna Ataba
 ---
-
 ## 🚀 Installation
 
 1. Clone the repository:
@@ -73,20 +86,4 @@ npm install
 # or
 yarn install
 ---
-📬 Contact
-
-Email: yumnaataba33@gmail.com
-
-Phone: +963 962 881 645
-
-LinkedIn: linkedin.com/in/yumna-ataba-b263802aa
-
-GitHub: github.com/YumnaAtaba3
-
-📝 License
-
-This project is open-source and available under the MIT License.
-
-Made with ❤️ and lots of ☕ coffee by Yumna Ataba
-## 📂 Project Structure
 
