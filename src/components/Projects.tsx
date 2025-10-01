@@ -29,10 +29,6 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
   project,
   index,
 }) => {
-  const imageUrl = project.image.startsWith("http")
-    ? project.image
-    : `${import.meta.env.BASE_URL}${project.image}`;
-
   return (
     <Tilt
       tiltMaxAngleX={6}
@@ -42,13 +38,15 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
     >
       <motion.div
         className="glass-card rounded-3xl overflow-hidden group bg-gradient-to-br
-                   from-blue-500/10 via-purple-500/10 to-transparent border border-white/10 shadow-xl"
+                   from-blue-500/10 via-purple-500/10 to-transparent border border-white/10 shadow-xl
+                   flex flex-col h-full"
         custom={index}
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
+        {/* Image */}
         <div className="relative overflow-hidden">
           <img
             src={project.image}
@@ -63,7 +61,8 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
           </div>
         </div>
 
-        <div className="p-8">
+        {/* Content */}
+        <div className="p-8 flex flex-col flex-1">
           {/* Title & Links */}
           <div className="flex items-start justify-between mb-4">
             <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
@@ -106,7 +105,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
           </div>
 
           {/* Description */}
-          <p className="text-muted-foreground leading-relaxed mb-6">
+          <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
             {project.description}
           </p>
 
@@ -123,7 +122,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
           </div>
 
           {/* Features */}
-          <div className="space-y-2">
+          <div className="space-y-2 mt-auto">
             <h4 className="font-semibold text-foreground">Key Features:</h4>
             <ul className="space-y-1">
               {project.features.slice(0, 3).map((feature, idx) => (
@@ -248,7 +247,7 @@ const Projects: React.FC = () => {
         />
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

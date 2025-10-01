@@ -72,9 +72,9 @@ const Header: React.FC = () => {
     >
       <nav className="section-container py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo (only visible on desktop) */}
           <div
-            className="text-2xl font-bold gradient-text cursor-pointer hover-scale"
+            className="hidden md:block text-2xl font-bold gradient-text cursor-pointer hover-scale"
             onClick={() => scrollToSection("hero")}
           >
             Yumna

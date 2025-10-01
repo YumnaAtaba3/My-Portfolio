@@ -4,25 +4,20 @@ import Tilt from "react-parallax-tilt";
 import { Code, Smartphone, Globe, Award, Users, Clock } from "lucide-react";
 
 // =================== Animations ===================
-
-// ✅ Define a proper Transition type
 const defaultTransition: Transition = {
   duration: 0.7,
   ease: "easeOut",
 };
 
-// ✅ Explicit Variants type with a `custom` index signature
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      ...defaultTransition,
-      delay: i * 0.2,
-    },
+    transition: { ...defaultTransition, delay: i * 0.2 },
   }),
 };
+
 // =================== Reusable Components ===================
 interface InfoCardProps {
   title: string;
@@ -65,14 +60,16 @@ const HighlightCard: React.FC<HighlightCardProps> = ({
       transition={{ duration: 0.6 }}
     >
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 circle-primary flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg">
+        {/* Fixed-size circle */}
+        <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg">
           <Icon className="w-6 h-6 text-white" />
         </div>
+
         <div>
           <h4 className="text-lg font-semibold text-foreground mb-2">
             {title}
           </h4>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-sm text-muted-foreground">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -95,7 +92,8 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, label, value }) => (
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-md">
+      {/* Fixed-size circle */}
+      <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-md">
         <Icon className="w-6 h-6 text-white" />
       </div>
       <div className="text-2xl font-bold gradient-text mb-2">{value}</div>

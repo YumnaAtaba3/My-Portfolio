@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden mt-16 md:mt-0"
     >
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
@@ -149,7 +149,11 @@ const Hero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-muted-foreground mb-2">Hello, I'm</p>
+            {/* Hide "Hello I'm" on mobile */}
+            <p className="text-lg text-muted-foreground mb-2 hidden lg:block">
+              Hello, I'm
+            </p>
+
             <motion.h1
               className="text-hero gradient-text mb-4"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -158,6 +162,7 @@ const Hero: React.FC = () => {
             >
               Yumna Ataba
             </motion.h1>
+
             <motion.h2
               className="text-display text-foreground mb-6"
               initial={{ y: 20, opacity: 0 }}
@@ -166,6 +171,7 @@ const Hero: React.FC = () => {
             >
               Frontend Developer
             </motion.h2>
+
             <motion.p
               className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8"
               initial={{ opacity: 0 }}
@@ -223,9 +229,9 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Avatar/Image */}
+          {/* Avatar / Logo - hidden on mobile */}
           <motion.div
-            className="flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-center lg:justify-end"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -240,7 +246,7 @@ const Hero: React.FC = () => {
                   ease: "easeInOut",
                 }}
               >
-                {" "}
+                {/* Floating Y */}
                 <motion.div
                   className="absolute text-9xl font-bold text-white"
                   animate={{
@@ -273,6 +279,8 @@ const Hero: React.FC = () => {
                   A
                 </motion.div>
               </motion.div>
+
+              {/* Floating Elements */}
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16 circle-accent opacity-80 flex items-center justify-center text-white font-bold"
                 animate={{ y: [0, -10, 0] }}
@@ -287,21 +295,13 @@ const Hero: React.FC = () => {
               >
                 ⚡
               </motion.div>
-
-              <motion.div
-                className="absolute -bottom-20 -left-4 w-12 h-12 circle-secondary opacity-80 flex items-center justify-center text-white text-sm"
-                animate={{ x: [50, -50, 50] }}
-                transition={{ repeat: Infinity, duration: 4 }}
-              >
-              <Mail/>
-              </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - hidden on mobile */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
