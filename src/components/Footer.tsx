@@ -149,16 +149,16 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border">
-          <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border gap-2 md:gap-0">
+          <div className="flex flex-col md:flex-row items-center gap-1 text-muted-foreground text-sm text-center md:text-left">
             <span>© {currentYear} Yumna Ataba. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+            <Heart className="w-4 h-4 text-red-500 animate-pulse mx-auto md:mx-1" />
             <span>and lots of coffee ☕</span>
           </div>
 
           <motion.button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 px-4 py-2 glass-card rounded-full hover-lift transition-all duration-300 text-sm font-medium"
+            className="group flex items-center gap-2 px-4 py-2 glass-card rounded-full hover-lift transition-all duration-300 text-sm font-medium mt-4 md:mt-0"
             whileHover={{ scale: 1.05 }}
           >
             Back to Top
