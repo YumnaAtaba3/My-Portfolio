@@ -10,7 +10,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { motion } from "framer-motion";
-
+import girlImage from "../assets/girl-hero.jpg";
 /* ---------------- Reusable Components ---------------- */
 interface ContactInfoItemProps {
   icon: React.ElementType;
@@ -237,49 +237,12 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <div className="relative">
-              <motion.div
-                className="w-80 h-80 rounded-full bg-gradient-hero flex items-center justify-center text-6xl font-bold text-white font-family-sans"
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut",
-                }}
-              >
-                {/* Floating Y */}
-                <motion.div
-                  className="absolute text-9xl font-bold text-white"
-                  animate={{
-                    x: [0, 40, -30, 20, 0],
-                    y: [0, -20, 30, -10, 0],
-                    rotate: [0, 10, -10, 0],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 6,
-                    ease: "easeInOut",
-                  }}
-                >
-                  Y
-                </motion.div>
-                {/* Floating A */}
-                <motion.div
-                  className="absolute text-7xl font-bold text-white"
-                  animate={{
-                    x: [10, -40, 30, -20, 10],
-                    y: [10, 30, -20, 20, 10],
-                    rotate: [0, -15, 15, 0],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 6,
-                    ease: "easeInOut",
-                  }}
-                >
-                  A
-                </motion.div>
-              </motion.div>
-
+              <img
+                src={girlImage}
+                alt="Yumna Ataba, Frontend Developer"
+                // ⬇️ REPLACED className with the new combined animation
+                className="w-80 h-80 rounded-full object-cover animate-hero-avatar"
+              />
               {/* Floating Elements */}
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16 circle-accent opacity-80 flex items-center justify-center text-white font-bold"
