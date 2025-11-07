@@ -166,8 +166,8 @@ import mercation from "../assets/Screenshot 2025-11-04 105301.png"
       'Smooth animations and hover effects'
     ],
     image: mercation,
-    liveUrl: 'https://github.com/YumnaAtaba3/Mercatino.git',
-    githubUrl: 'https://mercatino-nine.vercel.app/'
+    liveUrl: 'https://mercatino-nine.vercel.app/ ',
+    githubUrl: 'https://github.com/YumnaAtaba3/Mercatino.git'
   },
 
 
