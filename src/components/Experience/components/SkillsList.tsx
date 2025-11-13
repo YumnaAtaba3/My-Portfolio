@@ -22,7 +22,7 @@ const SkillsList: React.FC<{ categories: SkillCategory[] }> = ({
             {cat.skills.map((skill) => (
               <span
                 key={skill}
-                className={`px-3 py-1 bg-gradient-to-r ${cat.gradientClass} rounded-full text-sm font-medium hover-scale`}
+                className={`px-3 py-1 bg-gradient-to-r ${cat.gradientClass} rounded-full border border-muted-foreground  text-sm font-medium hover-scale`}
               >
                 {skill}
               </span>
