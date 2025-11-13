@@ -106,9 +106,9 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, label, value }) => (
 const About: React.FC = () => {
   const stats = [
     { icon: Code, label: "Projects Completed", value: "6+" },
-    { icon: Clock, label: "Years Experience", value: "2+" },
-    { icon: Award, label: "Success Rate", value: "95%" },
     { icon: Users, label: "Happy Clients", value: "10+" },
+    { icon: Clock, label: "Years Experience", value: "2+" },
+    { icon: Award, label: "Success Rate be", value: "95%" },
   ];
 
   const highlights = [

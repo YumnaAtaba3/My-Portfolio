@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Heart, ArrowUp, Linkedin, Github, Mail } from "lucide-react";
+import ParticleSystem from "./Hero/components/FloatingParticles";
 
 interface SocialButtonProps {
   icon: React.ElementType;
@@ -75,6 +76,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-surface border-t border-border relative overflow-hidden">
+      <ParticleSystem />
       {/* Floating subtle glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-72 h-72 bg-blue-500/20 blur-[120px] rounded-full top-10 left-0 animate-pulse" />

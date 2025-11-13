@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             className="hidden md:block text-2xl font-bold gradient-text cursor-pointer hover-scale"
             onClick={() => scrollToSection("hero")}
           >
-            Yumna
+            {/* Yumna */}
           </div>
 
           {/* Desktop Navigation */}

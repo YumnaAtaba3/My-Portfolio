@@ -14,7 +14,6 @@ import { Stat, stats } from "@/data/stats";
 
 // ================= Animations =================
 const transition: Transition = { duration: 0.6, ease: "easeOut" };
-
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number = 0) => ({
@@ -28,119 +27,119 @@ const fadeUp: Variants = {
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({
   project,
   index,
-}) => {
-  return (
-    <Tilt
-      tiltMaxAngleX={6}
-      tiltMaxAngleY={6}
-      scale={1.03}
-      transitionSpeed={250}
+}) => (
+  <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} scale={1.03} transitionSpeed={250}>
+    <motion.div
+      className="glass-card rounded-3xl overflow-hidden group bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent border border-white/10 shadow-xl flex flex-col h-full"
+      custom={index}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
     >
-      <motion.div
-        className="glass-card rounded-3xl overflow-hidden group bg-gradient-to-br
-                   from-blue-500/10 via-purple-500/10 to-transparent border border-white/10 shadow-xl
-                   flex flex-col h-full"
-        custom={index}
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {/* Image */}
-        <div className="relative overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-medium shadow-md">
-              {project.category === "web" ? "Web App" : "Mobile App"}
-            </span>
-          </div>
+      <div className="relative overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-medium shadow-md">
+            {project.category === "web" ? "Web App" : "Mobile App"}
+          </span>
         </div>
-
-        {/* Content */}
-        <div className="p-8 flex flex-col flex-1">
-          {/* Title & Links */}
-          <div className="flex items-start justify-between mb-4">
-            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-              {project.title}
-            </h3>
-            <div className="flex gap-2">
-              {project.liveUrl && project.liveUrl !== "#" && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 circle-primary flex items-center justify-center hover-glow transition-all duration-300"
-                >
-                  <ExternalLink className="w-5 h-5 text-white" />
-                </a>
-              )}
-              {project.githubUrl && project.githubUrl !== "#" && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 circle-secondary flex items-center justify-center hover-glow transition-all duration-300"
-                >
-                  <Github className="w-5 h-5 text-white" />
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Meta */}
-          <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              <span>{project.duration}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <User className="w-4 h-4" />
-              <span>{project.role}</span>
-            </div>
-          </div>
-
-          {/* Description */}
-          <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
-            {project.description}
-          </p>
-
-          {/* Tech Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
+      </div>
+      <div className="p-8 flex flex-col flex-1">
+        <div className="flex items-start justify-between mb-4">
+          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+            {project.title}
+          </h3>
+          <div className="flex gap-2">
+            {project.liveUrl && project.liveUrl !== "#" && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 circle-primary flex items-center justify-center hover-glow transition-all duration-300"
               >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Features */}
-          <div className="space-y-2 mt-auto">
-            <h4 className="font-semibold text-foreground">Key Features:</h4>
-            <ul className="space-y-1">
-              {project.features.slice(0, 3).map((feature, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                >
-                  <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+                <ExternalLink className="w-5 h-5 text-white" />
+              </a>
+            )}
+            {project.githubUrl && project.githubUrl !== "#" && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 circle-secondary flex items-center justify-center hover-glow transition-all duration-300"
+              >
+                <Github className="w-5 h-5 text-white" />
+              </a>
+            )}
           </div>
         </div>
-      </motion.div>
-    </Tilt>
-  );
-};
+        <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1">
+            <Calendar className="w-4 h-4" />
+            <span>{project.duration}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <User className="w-4 h-4" />
+            <span>{project.role}</span>
+          </div>
+        </div>
+        <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="space-y-4 mt-auto">
+          {project.challenge && (
+            <div>
+              <h4 className="font-semibold text-foreground flex items-center gap-2">
+                <ChevronRight className="w-4 h-4 text-primary" />
+                Challenge
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                {project.challenge}
+              </p>
+            </div>
+          )}
+          {project.solution && (
+            <div>
+              <h4 className="font-semibold text-foreground flex items-center gap-2">
+                <ChevronRight className="w-4 h-4 text-primary" />
+                Solution
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                {project.solution}
+              </p>
+            </div>
+          )}
+          {project.outcome && (
+            <div>
+              <h4 className="font-semibold text-foreground flex items-center gap-2">
+                <ChevronRight className="w-4 h-4 text-primary" />
+                Outcome
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                {project.outcome}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  </Tilt>
+);
 
 // ================= ProjectFilters =================
 const ProjectFilters: React.FC<{
@@ -197,34 +196,44 @@ const ProjectStats: React.FC<{ stats?: Stat[] }> = ({ stats = [] }) => (
   </motion.div>
 );
 
-// ================= Main Component =================
+// ================= Main Projects Component =================
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeTech, setActiveTech] = useState<string>("all");
 
-  const filters = [
-    { id: "all", label: "All Projects" },
+  const categoryFilters = [
+    { id: "all", label: "All" },
     { id: "web", label: "Web Apps" },
     { id: "mobile", label: "Mobile Apps" },
   ];
 
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+  const techFilters = [
+    { id: "all", label: "All" },
+    { id: "react", label: "React" },
+    { id: "vanilla", label: "Vanilla JS" },
+  ];
+
+  // فلترة المشاريع حسب الفئة ثم حسب التقنية إذا كانت Web
+  let filteredProjects = projects;
+  if (activeCategory !== "all")
+    filteredProjects = filteredProjects.filter(
+      (p) => p.category === activeCategory
+    );
+  if (activeCategory === "web" && activeTech !== "all")
+    filteredProjects = filteredProjects.filter(
+      (p) => p.techType === activeTech
+    );
 
   return (
     <section
       id="projects"
       className="section-spacing bg-surface relative overflow-hidden"
     >
-      {/* Floating gradient orbs for subtle background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-96 h-96 bg-blue-500/20 blur-[120px] rounded-full top-10 left-0 animate-pulse" />
         <div className="absolute w-96 h-96 bg-purple-500/20 blur-[120px] rounded-full bottom-0 right-0 animate-pulse delay-1000" />
       </div>
-
       <div className="section-container relative z-10">
-        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial="hidden"
@@ -239,14 +248,26 @@ const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Filters */}
+        {/* فلتر الفئة */}
         <ProjectFilters
-          filters={filters}
-          activeFilter={activeFilter}
-          setActiveFilter={setActiveFilter}
+          filters={categoryFilters}
+          activeFilter={activeCategory}
+          setActiveFilter={(id) => {
+            setActiveCategory(id);
+            setActiveTech("all");
+          }}
         />
 
-        {/* Projects Grid */}
+        {/* فلتر نوع Web */}
+        {activeCategory === "web" && (
+          <ProjectFilters
+            filters={techFilters}
+            activeFilter={activeTech}
+            setActiveFilter={setActiveTech}
+          />
+        )}
+
+        {/* عرض المشاريع */}
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
