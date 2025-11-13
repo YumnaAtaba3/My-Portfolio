@@ -14,7 +14,9 @@ const SkillsList: React.FC<{ categories: SkillCategory[] }> = ({
     <div className="space-y-6">
       {categories.map((cat, idx) => (
         <div key={idx}>
-          <h4 className="text-lg font-semibold mb-3">{cat.title}</h4>
+          <h4 className="text-lg font-semibold mb-3 text-primary">
+            {cat.title}
+          </h4>
 
           <div className="flex flex-wrap gap-2 ">
             {cat.skills.map((skill) => (
