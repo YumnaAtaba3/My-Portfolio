@@ -27,7 +27,7 @@ import dwello from "../assets/dwello.png";
 import hosting from "../assets/Screenshot 2025-11-03 124023.png";
 import mercation from "../assets/Screenshot 2025-11-04 105301.png";
 import umbra from "../assets/Screenshot 2025-11-13 203657.png";
-
+import finzaImg from "../assets/finza.png";
 export const projects: Project[] = [
   {
     id: 1,
@@ -163,5 +163,32 @@ export const projects: Project[] = [
     image: hosting,
     liveUrl: 'https://hosting-company-kappa.vercel.app/',
     githubUrl: 'https://github.com/YumnaAtaba3/Hosting-Company.git'
-  }
+  },
+  {
+  id: 9,
+  title: "Finza Banking System",
+  category: "web",
+  techType: "react",
+  duration: "1 week",
+  role: "UI/UX Designer, Software Architect, Frontend Developer",
+  technologies: ["React", "TypeScript", "MySQL", "Design Patterns", "UML", "Figma"],
+  description:
+    "An advanced banking system designed to implement 6+ software design patterns for a Software Engineering course. Focused on creating a scalable, maintainable banking platform using behavioral and structural design patterns.",
+  challenge:
+    "Traditional banking systems often become monolithic and difficult to maintain. Needed to demonstrate proper software architecture by implementing design patterns for complex banking operations.",
+  solution:
+    "Implemented Composite, Observer, Strategy, State, Chain of Responsibility, and Adapter patterns for accounts, transactions, notifications, and external integrations.",
+  outcome:
+    "Delivered a scalable banking system demonstrating 6+ behavioral and structural design patterns, with full account, transaction, and admin management.",
+  features: [
+    "Design Patterns Implementation (Composite, Observer, Strategy, State, Chain of Responsibility, Adapter)",
+    "Account Management System (multiple account types with hierarchical structures)",
+    "Transaction Processing (deposits, withdrawals, transfers, scheduled transactions)",
+    "Academic Documentation (UML diagrams, design pattern justifications, test coverage)"
+  ],
+  image: finzaImg, // import this at the top
+  liveUrl: "#",
+  githubUrl: "https://github.com/danasaadeh/advanced-banking-system"
+}
+
 ];
