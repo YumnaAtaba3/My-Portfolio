@@ -232,7 +232,44 @@ export const projects: Project[] = [
   image: complaintsImg, 
   liveUrl: "#",
   githubUrl: "https://github.com/YumnaAtaba3/complaints-system"
-}
+},
+// {
+//   id: 11,
+//   title: "Restaurant Management System",
+//   category: "web",
+//   techType: "react",
+//   duration: "1 month",
+//   role: "Frontend Developer",
+//   technologies: [
+//     "React",
+//     "Vite",
+//     "JavaScript (ES6+)",
+//     "Axios",
+//     "React Router",
+//     "Tailwind CSS",
+//     "REST API"
+//   ],
+//   description:
+//     "A restaurant management web application that allows users to browse menu items, search products, make reservations, and access informational pages such as About and Services.",
+//   challenge:
+//     "Designing a scalable frontend that integrates multiple features such as item search, reservations, and authentication while maintaining clean code organization.",
+//   solution:
+//     "Implemented a feature-based React architecture with modular pages, reusable components, and centralized API services using Axios.",
+//   outcome:
+//     "Delivered a responsive and maintainable restaurant management frontend with clear navigation and seamless API integration.",
+//   features: [
+//     "Menu items listing and search",
+//     "Table reservation system",
+//     "User authentication (login)",
+//     "About and Services pages",
+//     "Reusable components architecture",
+//     "Responsive UI for all devices"
+//   ],
+//   image: "/assets/restaurant-system.png",
+//   liveUrl: "#",
+//   githubUrl: "#"
+// }
+
 
 
 ];

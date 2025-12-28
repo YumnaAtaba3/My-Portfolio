@@ -1,9 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yumna Ataba - Frontend Developer</title>
+
+  <!-- ✅ FORCE DARK MODE BEFORE FIRST PAINT -->
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -32,9 +41,9 @@
     href="https://storage.googleapis.com/gpt-engineer-file-uploads/Sb0DWSR7Wwat140eMTBgsJMLdx43/uploads/1758667787876-images.jpeg">
 </head>
 
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
 </html>
