@@ -28,6 +28,7 @@ import hosting from "../assets/Screenshot 2025-11-03 124023.png";
 import mercation from "../assets/Screenshot 2025-11-04 105301.png";
 import umbra from "../assets/Screenshot 2025-11-13 203657.png";
 import finzaImg from "../assets/finza.png";
+import complaintsImg from "../assets/compliants.png";
 export const projects: Project[] = [
   {
     id: 1,
@@ -96,23 +97,23 @@ export const projects: Project[] = [
     liveUrl: 'https://mercatino-nine.vercel.app/',
     githubUrl: 'https://github.com/YumnaAtaba3/Mercatino.git'
   },
-  {
-    id: 5,
-    title: 'Multimart – E-Commerce Platform',
-    category: 'web',
-    techType: 'react',
-    duration: '3 weeks',
-    role: 'Frontend Developer',
-    technologies: ['React.js', 'Redux Toolkit', 'React Router', 'React Bootstrap'],
-    description: 'A complete e-commerce frontend platform.',
-    challenge: 'Create robust shopping experience with real-time updates.',
-    solution: 'Developed frontend using React and Redux Toolkit.',
-    outcome: 'Delivered scalable e-commerce interface.',
-    features: ['Redux cart management', 'Dynamic product pages', 'Real-time pricing', 'Responsive React Bootstrap UI', 'Scalable components'],
-    image: multimartImage,
-    liveUrl: 'https://multimart-ecommerce.onrender.com',
-    githubUrl: ''
-  },
+  // {
+  //   id: 5,
+  //   title: 'Multimart – E-Commerce Platform',
+  //   category: 'web',
+  //   techType: 'react',
+  //   duration: '3 weeks',
+  //   role: 'Frontend Developer',
+  //   technologies: ['React.js', 'Redux Toolkit', 'React Router', 'React Bootstrap'],
+  //   description: 'A complete e-commerce frontend platform.',
+  //   challenge: 'Create robust shopping experience with real-time updates.',
+  //   solution: 'Developed frontend using React and Redux Toolkit.',
+  //   outcome: 'Delivered scalable e-commerce interface.',
+  //   features: ['Redux cart management', 'Dynamic product pages', 'Real-time pricing', 'Responsive React Bootstrap UI', 'Scalable components'],
+  //   image: multimartImage,
+  //   liveUrl: 'https://multimart-ecommerce.onrender.com',
+  //   githubUrl: ''
+  // },
   {
     id: 6,
     title: 'Travel Landing Page',
@@ -186,9 +187,52 @@ export const projects: Project[] = [
     "Transaction Processing (deposits, withdrawals, transfers, scheduled transactions)",
     "Academic Documentation (UML diagrams, design pattern justifications, test coverage)"
   ],
-  image: finzaImg, // import this at the top
+  image: finzaImg, 
   liveUrl: "#",
   githubUrl: "https://github.com/danasaadeh/advanced-banking-system"
+},
+{
+  id: 10,
+  title: "Complaints Management System",
+  category: "web",
+  techType: "react",
+  duration: "2 months",
+  role: "Frontend Developer",
+  technologies: [
+    "React 19",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Zustand",
+    "TanStack Query (React Query)",
+    "React Hook Form",
+    "Yup",
+    "i18next",
+    "Axios"
+  ],
+  description:
+    "A modern, scalable complaints management system for government entities, providing end-to-end complaint handling, user management, analytics, and activity tracking with a responsive and accessible UI.",
+  challenge:
+    "Building a large-scale, role-based system with high performance, multi-language support, and maintainable architecture while handling complex workflows and real-time data updates.",
+  solution:
+    "Adopted a feature-based architecture with React and TypeScript, leveraged React Query for caching and synchronization, implemented lazy loading, and enforced role-based access control.",
+  outcome:
+    "Delivered a production-ready complaints management platform with strong performance, clean architecture, and excellent user experience across devices.",
+  features: [
+    "Complaints lifecycle management (create, assign, track, versioning)",
+    "Role-based authentication and protected routes",
+    "Statistics dashboard with charts and KPIs",
+    "Government units and user management",
+    "Activity logs with filtering and export",
+    "Multi-language support (English & Arabic)",
+    "Dark / Light theme support",
+    "Responsive, accessible UI"
+  ],
+  image: complaintsImg, 
+  liveUrl: "#",
+  githubUrl: "https://github.com/YumnaAtaba3/complaints-system"
 }
+
 
 ];
