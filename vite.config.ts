@@ -5,7 +5,7 @@ import path from "path";
 const repoName = "My-Portfolio";
 
 export default defineConfig({
-  base: `/${repoName}/`, 
+  base: `/${repoName}/`,
   plugins: [react()],
   resolve: {
     alias: {
