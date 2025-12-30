@@ -41,9 +41,6 @@ const Experience: React.FC = () => {
         <div className="space-y-16">
           {/* Experience Section */}
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold mb-8 border-b pb-4">
-              Professional Experience
-            </h3>
 
             {experiences.map((exp, idx) => (
               <ExperienceCard key={idx} experience={exp} />
