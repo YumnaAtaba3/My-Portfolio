@@ -43,7 +43,7 @@ export interface SkillCategory {
         "Agile/Scrum",
         "Project Management",
         "LocalStorage",
-        "State Management",
+        // "State Management",
         "Accessibility Best Practices",
       ],
       gradientClass: "bg-gradient-accent",
