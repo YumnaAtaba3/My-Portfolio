@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yumna Ataba - Frontend Developer</title>
 
-  <!-- FORCE DARK MODE -->
+  <!-- ✅ FORCE DARK MODE BEFORE FIRST PAINT -->
   <script>
     (function () {
       const theme = localStorage.getItem('theme') || 'dark';
@@ -33,9 +33,9 @@
   <meta property="og:title" content="Yumna Ataba - Frontend Developer">
   <meta name="twitter:title" content="Yumna Ataba - Frontend Developer">
   <meta property="og:description"
-    content="Frontend Developer specializing in React.js, Flutter, and modern web technologies.">
+    content="Frontend Developer specializing in React.js, Flutter, and modern web technologies. 2+ years of experience creating responsive web and mobile applications.">
   <meta name="twitter:description"
-    content="Frontend Developer specializing in React.js, Flutter, and modern web technologies.">
+    content="Frontend Developer specializing in React.js, Flutter, and modern web technologies. 2+ years of experience creating responsive web and mobile applications.">
 
   <link rel="icon" type="image/x-icon"
     href="https://storage.googleapis.com/gpt-engineer-file-uploads/Sb0DWSR7Wwat140eMTBgsJMLdx43/uploads/1758667787876-images.jpeg">
@@ -43,8 +43,7 @@
 
 <body>
   <div id="root"></div>
-  <!-- لا تضع أي استدعاء لملف .tsx -->
-  <!-- Vite سيضيف JS الصحيح تلقائيًا عند build -->
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
