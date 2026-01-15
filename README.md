@@ -62,8 +62,6 @@ A **modern, interactive, and responsive Frontend Developer portfolio** built usi
 
 Email: yumnaataba33@gmail.com
 
-Phone: +963 962 881 645
-
 LinkedIn: linkedin.com/in/yumna-ataba-b263802aa
 
 GitHub: github.com/YumnaAtaba3
